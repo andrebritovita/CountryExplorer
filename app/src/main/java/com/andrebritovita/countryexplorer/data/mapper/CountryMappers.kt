@@ -5,7 +5,7 @@ import com.andrebritovita.countryexplorer.domain.model.CountryDetail
 import com.andrebritovita.countryexplorer.domain.model.CountryList
 
 
-fun CountryDto.toDomainDetail(): CountryDetail {
+fun CountryDto.toCountryDetail(): CountryDetail {
     val displayName = this.name?.common ?: "Unknown"
     val flagUrl = this.flags?.png ?: flags?.svg
     val region = this.region?: "N/A"
@@ -27,14 +27,16 @@ fun CountryDto.toDomainDetail(): CountryDetail {
     )
 }
 
-fun CountryDto.toDomainList(): CountryList {
+fun CountryDto.toCountryList(): CountryList {
     val displayName = this.name?.common?: "Unknown"
     val flagUrl = this.flags?.png?: flags?.svg
     val region = this.region?:"N/A"
+    val capital = this.capital?.firstOrNull()?: "N/A"
 
     return CountryList(
         displayName,
         flagUrl,
-        region
+        region,
+        capital
     )
 }
