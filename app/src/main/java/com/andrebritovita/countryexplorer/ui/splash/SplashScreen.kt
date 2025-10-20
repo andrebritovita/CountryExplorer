@@ -46,7 +46,7 @@ fun SplashScreen(onContinueClick: () -> Unit) {
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .padding(32.dp)
-                .alpha(alphaAnim.value) // Aplica a animação de fade-in
+                .alpha(alphaAnim.value)
         ) {
             Icon(
                 imageVector = Icons.Filled.TravelExplore,
@@ -57,7 +57,7 @@ fun SplashScreen(onContinueClick: () -> Unit) {
             Spacer(modifier = Modifier.height(16.dp))
             Text(
                 text = "Country Explorer",
-                style = MaterialTheme.typography.headlineLarge, // Fonte maior
+                style = MaterialTheme.typography.headlineLarge,
                 color = MaterialTheme.colorScheme.primary
             )
             Spacer(modifier = Modifier.height(8.dp))
@@ -69,7 +69,6 @@ fun SplashScreen(onContinueClick: () -> Unit) {
             )
             Spacer(modifier = Modifier.height(48.dp))
 
-            // 👇 Botão para o usuário clicar e continuar
             Button(
                 onClick = onContinueClick,
                 modifier = Modifier.fillMaxWidth(0.8f)

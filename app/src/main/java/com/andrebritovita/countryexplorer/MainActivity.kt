@@ -17,9 +17,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CountryExplorerTheme {
-                // Cria o controlador de navegação
                 val navController = rememberNavController()
-                // Inicia o gráfico de navegação do app
                 AppNavGraph(navController = navController)
             }
         }

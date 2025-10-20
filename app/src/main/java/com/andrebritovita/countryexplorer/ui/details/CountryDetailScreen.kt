@@ -34,7 +34,6 @@ fun CountryDetailScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                // 👇 Título dinâmico
                 title = {
                     val countryName = (state as? Resource.Success)?.data?.name ?: "Details"
                     Text(countryName, maxLines = 1)
@@ -90,7 +89,7 @@ private fun CountryDetailContent(country: CountryDetail) {
             HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
             DetailItem(label = "Languages", value = country.languages)
             HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
-            BordersSection(borders = country.borders) // 👇 Seção de fronteiras separada
+            BordersSection(borders = country.borders)
         }
     }
 }
@@ -127,7 +126,6 @@ private fun BordersSection(borders: List<String>?) {
         if (borders.isNullOrEmpty()) {
             Text("This country has no land borders.", style = MaterialTheme.typography.bodyLarge)
         } else {
-            // 👇 FlowRow organiza os chips em múltiplas linhas automaticamente
             FlowRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)

@@ -21,7 +21,6 @@ class CountryListViewModel @Inject constructor(
     private val _countriesState = MutableStateFlow<Resource<List<CountryList>>>(Resource.Loading)
     val countriesState: StateFlow<Resource<List<CountryList>>> = _countriesState
 
-    // 👇 Guarda a lista original para não precisar de novas chamadas de API
     private var allCountries: List<CountryList> = emptyList()
 
     init {
@@ -53,7 +52,6 @@ class CountryListViewModel @Inject constructor(
         }
     }
 
-    // 👇 Nova função para filtrar por região
     fun filterByRegion(region: String) {
         if (region == "All") {
             _countriesState.value = Resource.Success(allCountries)

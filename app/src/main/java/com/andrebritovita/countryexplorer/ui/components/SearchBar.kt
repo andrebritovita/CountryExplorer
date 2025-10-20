@@ -15,7 +15,6 @@ fun SearchBar(
     onQueryChange: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    // Usamos o TextField básico, que é mais compacto
     TextField(
         value = query,
         onValueChange = onQueryChange,
@@ -38,7 +37,6 @@ fun SearchBar(
             }
         },
         singleLine = true,
-        // Removemos o fundo e as linhas do TextField para que ele se misture ao Surface
         colors = TextFieldDefaults.colors(
             focusedContainerColor = Color.Transparent,
             unfocusedContainerColor = Color.Transparent,
