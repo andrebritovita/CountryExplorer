@@ -32,7 +32,7 @@ class CountryListViewModel @Inject constructor(
             _countriesState.value = Resource.Loading
             when (val result = getAllCountriesUseCase()) {
                 is Resource.Success -> {
-                    allCountries = result.data // Salva a lista completa
+                    allCountries = result.data
                     _countriesState.value = Resource.Success(allCountries)
                 }
                 is Resource.Error -> _countriesState.value = result
@@ -45,7 +45,7 @@ class CountryListViewModel @Inject constructor(
         viewModelScope.launch {
             _countriesState.value = Resource.Loading
             if (name.isBlank()) {
-                _countriesState.value = Resource.Success(allCountries) // Mostra a lista completa
+                _countriesState.value = Resource.Success(allCountries)
             } else {
                 _countriesState.value = getCountriesByNameUseCase(name)
             }
