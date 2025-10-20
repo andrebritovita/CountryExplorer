@@ -36,7 +36,7 @@ class CountryListViewModel @Inject constructor(
                     _countriesState.value = Resource.Success(allCountries)
                 }
                 is Resource.Error -> _countriesState.value = result
-                is Resource.Loading -> {} // Já estamos em Loading
+                is Resource.Loading -> {}
             }
         }
     }
